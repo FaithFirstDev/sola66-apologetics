@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sola66 Apologetics — Download</title>
+<meta name="description" content="Sola66 Apologetics is a free study library for Christian apologetics. Write and organize arguments on your computer and read them on your phone. Download for Windows, Mac and Android.">
+<meta name="theme-color" content="#0A1020" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F3F5FA" media="(prefers-color-scheme: light)">
+<meta property="og:title" content="Sola66 Apologetics">
+<meta property="og:description" content="A free study library for Christian apologetics, on your computer and your phone.">
+<meta property="og:image" content="assets/icon-512.png">
+<link rel="icon" type="image/png" href="assets/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+@font-face { font-family: "Inter"; font-weight: 400; font-style: normal; font-display: swap; src: url("assets/fonts/Inter-Regular.woff") format("woff"); }
+@font-face { font-family: "Inter"; font-weight: 500; font-style: normal; font-display: swap; src: url("assets/fonts/Inter-Medium.woff") format("woff"); }
+@font-face { font-family: "Inter"; font-weight: 600; font-style: normal; font-display: swap; src: url("assets/fonts/Inter-SemiBold.woff") format("woff"); }
+@font-face { font-family: "Noto Serif"; font-weight: 700; font-style: normal; font-display: swap; src: url("assets/fonts/NotoSerif-Bold.woff") format("woff"); }
+
+:root {
+  --bg: #F3F5FA;
+  --surface: #FFFFFF;
+  --surface-2: #F7F9FD;
+  --divider: #E2E7F0;
+  --text: #111827;
+  --muted: #4E5A72;
+  --faint: #5F6B82;
+  --rose: #D12F5A;
+  --rose-fill: #D12F5A;
+  --rose-tint: #FFE1E9;
+  --on-rose: #FFFFFF;
+  --blue: #1D5FD0;
+  --success: #15803D;
+  --shadow: 0 1px 2px rgba(17, 24, 39, .06), 0 8px 24px rgba(17, 24, 39, .06);
+  --glow: radial-gradient(60% 50% at 70% 0%, rgba(209, 47, 90, .10), transparent 70%), radial-gradient(50% 40% at 0% 10%, rgba(29, 95, 208, .08), transparent 70%);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0A1020;
+    --surface: #101A2E;
+    --surface-2: #15223B;
+    --divider: #1F2C47;
+    --text: #E9EDF5;
+    --muted: #A3AEC6;
+    --faint: #8591AD;
+    --rose: #F2577E;
+    --rose-fill: #C7365F;
+    --rose-tint: #3B1627;
+    --on-rose: #FFFFFF;
+    --blue: #4E9BFF;
+    --success: #4ADE80;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 12px 32px rgba(0, 0, 0, .35);
+    --glow: radial-gradient(60% 50% at 70% 0%, rgba(242, 87, 126, .16), transparent 70%), radial-gradient(50% 40% at 0% 10%, rgba(78, 155, 255, .12), transparent 70%);
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 16px/1.6 "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--rose); text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3 { font-family: "Noto Serif", Georgia, serif; font-weight: 700; line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+.wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+@media (min-width: 720px) { .wrap { padding: 0 28px; } }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 16px; top: 12px; z-index: 10; background: var(--surface); padding: 8px 12px; }
+
+/* Header */
+header {
+  position: sticky; top: 0; z-index: 5;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: saturate(160%) blur(12px);
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+  border-bottom: 1px solid var(--divider);
+}
+.bar { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+.brand img { width: 34px; height: 34px; border-radius: 9px; box-shadow: 0 2px 10px rgba(242, 87, 126, .35); }
+.wordmark { display: inline-flex; flex-direction: column; line-height: 1; }
+.wordmark .top { font: 700 20px/1 "Noto Serif", Georgia, serif; }
+.wordmark .sub { font: 600 8.4px/1 "Inter", sans-serif; color: var(--muted); margin-top: 4px; white-space: nowrap; letter-spacing: 1.3px; }
+nav { display: flex; align-items: center; gap: 6px; }
+nav a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: 15px; padding: 8px 10px; border-radius: 8px; }
+nav a:hover { color: var(--text); background: var(--surface-2); }
+nav .cta { color: var(--on-rose); background: var(--rose-fill); padding: 8px 14px; }
+nav .cta:hover { color: var(--on-rose); background: var(--rose); }
+@media (max-width: 640px) { nav a:not(.cta) { display: none; } }
+
+/* Hero */
+.hero { background: var(--glow); }
+.hero .wrap { display: grid; gap: 40px; padding-top: 56px; padding-bottom: 64px; align-items: center; }
+@media (min-width: 960px) { .hero .wrap { grid-template-columns: 1.02fr 1fr; padding-top: 80px; padding-bottom: 88px; } }
+.eyebrow { display: inline-flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.chip { font-size: 13px; font-weight: 600; color: var(--rose); background: var(--rose-tint); padding: 5px 10px; border-radius: 999px; }
+.hero h1 { font-size: clamp(34px, 5.2vw, 54px); }
+.lede { color: var(--muted); font-size: clamp(17px, 2vw, 19px); margin: 18px 0 28px; max-width: 34em; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+  font: 600 16px/1 "Inter", sans-serif; padding: 15px 22px; border-radius: 12px;
+  border: 1px solid transparent; cursor: pointer;
+}
+.btn svg { width: 20px; height: 20px; flex: none; }
+.btn-primary { background: var(--rose-fill); color: var(--on-rose); box-shadow: 0 6px 20px rgba(209, 47, 90, .28); }
+.btn-primary:hover { background: var(--rose); }
+.btn-ghost { background: transparent; color: var(--text); border-color: var(--divider); }
+.btn-ghost:hover { background: var(--surface-2); }
+.btn[aria-disabled="true"] { background: var(--surface-2); color: var(--faint); box-shadow: none; cursor: default; border-color: var(--divider); }
+.fine { color: var(--faint); font-size: 14px; margin-top: 14px; }
+
+/* The phone overlaps the lower right of the computer screenshot and always
+   fits inside this box: the box is the computer image's height plus 12%. */
+.shots { position: relative; padding-bottom: 12%; max-width: 620px; width: 100%; justify-self: center; }
+.shot-mac { width: 88%; height: auto; border-radius: 14px; border: 1px solid var(--divider); box-shadow: var(--shadow); display: block; }
+.shot-phone {
+  position: absolute; right: 0; bottom: 0; width: 24%; height: auto;
+  border-radius: 18px; border: 5px solid #0B1220; box-shadow: var(--shadow); display: block;
+}
+
+/* Sections */
+section { padding: 72px 0; }
+.section-head { max-width: 40em; margin-bottom: 32px; }
+.section-head h2 { font-size: clamp(28px, 3.6vw, 38px); }
+.section-head p { color: var(--muted); margin: 12px 0 0; font-size: 17px; }
+.alt { background: var(--surface-2); border-top: 1px solid var(--divider); border-bottom: 1px solid var(--divider); }
+@media (prefers-color-scheme: dark) { .alt { background: #0D1527; } }
+
+/* Downloads */
+.grid { display: grid; gap: 16px; }
+@media (min-width: 720px) { .grid-2 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .grid-4 { grid-template-columns: repeat(4, 1fr); } .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+.card {
+  background: var(--surface); border: 1px solid var(--divider); border-radius: 16px;
+  padding: 22px; display: flex; flex-direction: column; gap: 10px; position: relative;
+}
+.card.recommended { border-color: var(--rose); box-shadow: 0 0 0 1px var(--rose), var(--shadow); }
+@media (max-width: 719px) { .card.recommended { order: -1; margin: 8px 0; } }
+.badge { position: absolute; top: -11px; left: 18px; background: var(--rose-fill); color: var(--on-rose); font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 999px; }
+.card .icon { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--rose-tint); color: var(--rose); }
+.card .icon svg { width: 24px; height: 24px; }
+.card h3 { font-size: 22px; margin-top: 4px; }
+.meta { color: var(--muted); font-size: 14.5px; margin: 0; }
+.card .btn { margin-top: auto; justify-content: center; width: 100%; padding: 13px 16px; font-size: 15px; }
+.card .help { font-size: 14px; text-align: center; }
+
+/* Steps & features */
+.step { background: var(--surface); border: 1px solid var(--divider); border-radius: 16px; padding: 24px; }
+.num { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--rose-fill); color: var(--on-rose); font-weight: 600; margin-bottom: 14px; }
+.step h3 { font-size: 20px; margin-bottom: 6px; }
+.step p { color: var(--muted); margin: 0; }
+.features { display: grid; gap: 12px 28px; margin-top: 40px; }
+@media (min-width: 720px) { .features { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .features { grid-template-columns: repeat(3, 1fr); } }
+.feature { display: flex; gap: 12px; align-items: flex-start; }
+.feature svg { width: 20px; height: 20px; flex: none; color: var(--success); margin-top: 3px; }
+.feature b { font-weight: 600; }
+.feature span { color: var(--muted); }
+
+/* Install guides */
+details { background: var(--surface); border: 1px solid var(--divider); border-radius: 14px; margin-bottom: 12px; }
+summary {
+  cursor: pointer; list-style: none; padding: 18px 20px; font-weight: 600; font-size: 17px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after { content: ""; width: 10px; height: 10px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); margin-top: -4px; flex: none; }
+details[open] summary::after { transform: rotate(-135deg); margin-top: 4px; }
+.guide { padding: 0 20px 18px; }
+.guide ol { margin: 0; padding-left: 22px; }
+.guide li { margin: 8px 0; }
+.guide li::marker { color: var(--rose); font-weight: 600; }
+.guide p { color: var(--muted); margin: 14px 0 0; }
+.guide .need { font-size: 14.5px; color: var(--faint); }
+kbd, .ui { font: 600 0.92em "Inter", sans-serif; background: var(--surface-2); border: 1px solid var(--divider); border-radius: 6px; padding: 1px 6px; white-space: nowrap; }
+
+/* Trust */
+.trust { display: grid; gap: 16px; }
+@media (min-width: 860px) { .trust { grid-template-columns: repeat(2, 1fr); } }
+.trust .step h3 { font-size: 19px; }
+
+footer { border-top: 1px solid var(--divider); padding: 32px 0 48px; color: var(--faint); font-size: 14px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+footer p { margin: 0; }
+</style>
+</head>
+<body>
+<a class="skip" href="#download">Skip to downloads</a>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Sola66 Apologetics">
+      <img src="assets/icon-512.png" alt="" width="34" height="34">
+      <span class="wordmark" aria-hidden="true"><span class="top" id="wm-top">Sola66</span><span class="sub" id="wm-sub">APOLOGETICS</span></span>
+    </a>
+    <nav aria-label="Main">
+      <a href="#how">How it works</a>
+      <a href="#install">Install help</a>
+      <a class="cta" href="#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow"><span class="chip">Free</span><span class="chip">No account</span><span class="chip">No ads or tracking</span></div>
+        <h1>Your apologetics library, organized and always with you.</h1>
+        <p class="lede">Write and organize arguments by religion and worldview on your computer, then carry them on your phone. Everything stays on your own devices.</p>
+        <div class="actions">
+          <a class="btn btn-primary" id="hero-btn" href="#download">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
+            <span id="hero-label">Download</span>
+          </a>
+          <a class="btn btn-ghost" href="#download" id="hero-other">All downloads</a>
+        </div>
+        <p class="fine" id="hero-note">Version 1.0.0 · Windows, Mac and Android. iPhone coming soon.</p>
+      </div>
+      <div class="shots" aria-hidden="true">
+        <img class="shot-mac" src="assets/screen-mac.jpg" alt="" width="1240" height="808">
+        <img class="shot-phone" src="assets/screen-phone.jpg" alt="" width="540" height="1170">
+      </div>
+    </div>
+  </div>
+
+  <section id="download" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Download</h2>
+        <p>Computers are where you write your library. Phones receive it from your computer and keep it with you.</p>
+      </div>
+      <div class="grid grid-2 grid-4">
+        <article class="card" data-platform="windows">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+          <h3>Windows</h3>
+          <p class="meta">Windows 10 or 11, 64-bit<br>Installer · 19 MB</p>
+          <a class="btn btn-primary" href="https://github.com/FaithFirstDev/sola66-apologetics/releases/latest/download/Sola66-Apologetics-Windows.zip">Download for Windows</a>
+          <a class="help" href="#install-windows">How to install</a>
+        </article>
+        <article class="card" data-platform="mac">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 19h20"/></svg></div>
+          <h3>Mac</h3>
+          <p class="meta">Apple silicon (M1 or newer), macOS 14 or newer<br>Disk image · 23 MB</p>
+          <a class="btn btn-primary" href="https://github.com/FaithFirstDev/sola66-apologetics/releases/latest/download/Sola66-Apologetics-Mac.dmg">Download for Mac</a>
+          <a class="help" href="#install-mac">How to install</a>
+        </article>
+        <article class="card" data-platform="android">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div>
+          <h3>Android</h3>
+          <p class="meta">Android 14 or newer<br>App file · 109 MB</p>
+          <a class="btn btn-primary" href="https://github.com/FaithFirstDev/sola66-apologetics/releases/latest/download/Sola66-Apologetics-Android.apk">Download for Android</a>
+          <a class="help" href="#install-android">How to install</a>
+        </article>
+        <article class="card" data-platform="iphone">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="3"/><path d="M11 5h2"/></svg></div>
+          <h3>iPhone</h3>
+          <p class="meta">Coming soon<br>Through TestFlight and the App Store</p>
+          <span class="btn" aria-disabled="true" role="link">Coming soon</span>
+          <span class="help meta">Use the computer version in the meantime.</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How it works</h2>
+        <p>No cloud and no account. Your computer holds the library and sends it straight to your phones over your own Wi-Fi.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="step"><div class="num">1</div><h3>Write on your computer</h3><p>Organize arguments by religion or worldview and topic, with counterarguments, citations and tags.</p></div>
+        <div class="step"><div class="num">2</div><h3>Pair your phone</h3><p>Open Sync on both, scan the code and check that both screens show the same number.</p></div>
+        <div class="step"><div class="num">3</div><h3>Take it anywhere</h3><p>Read, search and copy arguments on your phone, even offline. Your notes and favorites stay on the phone.</p></div>
+      </div>
+      <div class="features">
+        <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Fast search</b> <span>across every argument, topic and tag.</span></div></div>
+        <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Copy or save as PDF</b> <span>ready for a talk, an essay or a conversation.</span></div></div>
+        <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Many languages</b> <span>including Greek, Hebrew and Arabic text.</span></div></div>
+        <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Share with others</b> <span>send a whole library, a topic or one argument as a file.</span></div></div>
+        <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Encrypted backups</b> <span>protected with a password only you know.</span></div></div>
+        <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Light and dark</b> <span>with adjustable reading text size.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="install" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Install help</h2>
+        <p>The apps are new and not yet signed with a developer certificate, so your computer or phone asks once whether you trust them. Here is what to tap.</p>
+      </div>
+
+      <details id="install-windows">
+        <summary>Windows</summary>
+        <div class="guide">
+          <ol>
+            <li>Download <b>Sola66-Apologetics-Windows.zip</b>, open it and choose <span class="ui">Extract all</span>.</li>
+            <li>Open the extracted folder and double-click <b>Install Sola66 Apologetics</b>.</li>
+            <li>If Windows says <b>“Windows protected your PC”</b>, click <span class="ui">More info</span>, then <span class="ui">Run anyway</span>.</li>
+            <li>Click <span class="ui">Install</span>. Tick <span class="ui">Create a desktop shortcut</span> if you’d like one. No administrator password is needed.</li>
+            <li>Open Sola66 Apologetics from the Start menu.</li>
+          </ol>
+          <p>To update, run a newer installer the same way; your library is kept. To uninstall, go to Settings › Apps › Installed apps.</p>
+          <p class="need">Needs Windows 10 or 11, 64-bit.</p>
+        </div>
+      </details>
+
+      <details id="install-mac">
+        <summary>Mac</summary>
+        <div class="guide">
+          <ol>
+            <li>Download and open <b>Sola66-Apologetics-Mac.dmg</b>.</li>
+            <li>Drag Sola66 Apologetics onto the Applications folder in the window that opens.</li>
+            <li>Open Applications and double-click Sola66 Apologetics.</li>
+            <li>macOS says it can’t verify the app. Click <span class="ui">Done</span>.</li>
+            <li>Open <b>System Settings › Privacy &amp; Security</b>, scroll down to the message about Sola66 Apologetics and click <span class="ui">Open Anyway</span>. Confirm with your password or Touch ID. You only need to do this once.</li>
+          </ol>
+          <p>If macOS asks whether the app may use your keychain, click <span class="ui">Always Allow</span>: the app keeps its security keys there. To update, drag the newer copy into Applications and choose Replace; your library is kept.</p>
+          <p class="need">Needs a Mac with Apple silicon (M1 or newer) and macOS 14 or newer.</p>
+        </div>
+      </details>
+
+      <details id="install-android">
+        <summary>Android</summary>
+        <div class="guide">
+          <ol>
+            <li>On your phone, tap <b>Download for Android</b>. If your browser warns that the file could be harmful, choose <span class="ui">Download anyway</span>.</li>
+            <li>Tap the downloaded file (in the notification, or in Files › Downloads).</li>
+            <li>If Android asks, allow installing apps from this source: tap <span class="ui">Settings</span>, turn on <span class="ui">Allow from this source</span>, then go back.</li>
+            <li>Tap <span class="ui">Install</span>. If Play Protect says the app is unrecognized, tap <span class="ui">More details</span>, then <span class="ui">Install anyway</span>.</li>
+            <li>Open Sola66 Apologetics, then open Sync on your computer and on the phone and scan the code to bring your library over.</li>
+          </ol>
+          <p>To update, install a newer copy the same way; your notes and favorites are kept.</p>
+          <p class="need">Needs Android 14 or newer.</p>
+        </div>
+      </details>
+
+      <details id="install-iphone">
+        <summary>iPhone</summary>
+        <div class="guide">
+          <p style="margin-top:0">The iPhone app is on its way. iPhones can only install apps through the App Store or Apple’s TestFlight, and it will be available there soon.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head"><h2>Safe downloads</h2></div>
+      <div class="trust">
+        <div class="step"><h3>Only download from this page</h3><p>This is the official home of Sola66 Apologetics. Copies from anywhere else may have been changed.</p></div>
+        <div class="step"><h3>Private by design</h3><p>The apps have no accounts, ads or tracking, and never send your library to a server. This page uses no cookies or trackers.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Sola66 Apologetics</p>
+    <p>Version 1.0.0 · Fonts: Inter and Noto Serif (SIL Open Font License)</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Stack the wordmark like the app: APOLOGETICS spaced to the width of Sola66.
+  function fitWordmark() {
+    var top = document.getElementById('wm-top'), sub = document.getElementById('wm-sub');
+    if (!top || !sub) return;
+    sub.style.letterSpacing = '0px';
+    var gaps = sub.textContent.length - 1;
+    var extra = top.getBoundingClientRect().width - sub.getBoundingClientRect().width;
+    if (gaps > 0 && extra > 0) sub.style.letterSpacing = (extra / gaps) + 'px';
+  }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitWordmark); else window.addEventListener('load', fitWordmark);
+
+  // "How to install" links open the guide they point to.
+  function openGuide() {
+    var target = location.hash && document.getElementById(location.hash.slice(1));
+    if (target && target.tagName === 'DETAILS') target.open = true;
+  }
+  window.addEventListener('hashchange', openGuide);
+  openGuide();
+
+  // Put this device's download first.
+  var ua = navigator.userAgent || '';
+  var iOS = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var platform = iOS ? 'iphone' : /Android/.test(ua) ? 'android' : /Windows/.test(ua) ? 'windows' : /Macintosh|Mac OS X/.test(ua) ? 'mac' : null;
+  if (!platform) return;
+  var card = document.querySelector('.card[data-platform="' + platform + '"]');
+  if (!card) return;
+  card.classList.add('recommended');
+  var badge = document.createElement('span');
+  badge.className = 'badge';
+  badge.textContent = 'For this device';
+  card.prepend(badge);
+  var guide = document.getElementById('install-' + platform);
+  if (guide) guide.open = true;
+
+  var heroBtn = document.getElementById('hero-btn'), heroLabel = document.getElementById('hero-label'), note = document.getElementById('hero-note');
+  if (platform === 'iphone') {
+    heroLabel.textContent = 'iPhone app coming soon';
+    heroBtn.setAttribute('href', '#install-iphone');
+    note.textContent = 'In the meantime, Sola66 Apologetics is available for Windows, Mac and Android.';
+    return;
+  }
+  var link = card.querySelector('a.btn');
+  heroBtn.setAttribute('href', link.getAttribute('href'));
+  heroLabel.textContent = link.textContent;
+  var meta = card.querySelector('.meta');
+  note.innerHTML = 'Version 1.0.0 · ' + meta.innerHTML.replace('<br>', ' · ') + ' · <a href="#install-' + platform + '">How to install</a>';
+})();
+</script>
+</body>
+</html>
