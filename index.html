@@ -27,6 +27,7 @@
   --muted: #4E5A72;
   --faint: #5F6B82;
   --rose: #D12F5A;
+  --brand-red: #D0101F;
   --rose-fill: #D12F5A;
   --rose-tint: #FFE1E9;
   --on-rose: #FFFFFF;
@@ -46,6 +47,7 @@
     --muted: #A3AEC6;
     --faint: #8591AD;
     --rose: #F2577E;
+    --brand-red: #F03340;
     --rose-fill: #C7365F;
     --rose-tint: #3B1627;
     --on-rose: #FFFFFF;
@@ -88,6 +90,7 @@ header {
 .brand img { width: 34px; height: 34px; border-radius: 9px; box-shadow: 0 2px 10px rgba(242, 87, 126, .35); }
 .wordmark { display: inline-flex; flex-direction: column; line-height: 1; }
 .wordmark .top { font: 700 20px/1 "Noto Serif", Georgia, serif; }
+.wordmark .top .sixty-six { color: var(--brand-red); }
 .wordmark .sub { font: 600 8.4px/1 "Inter", sans-serif; color: var(--muted); margin-top: 4px; white-space: nowrap; letter-spacing: 1.3px; }
 nav { display: flex; align-items: center; gap: 6px; }
 nav a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: 15px; padding: 8px 10px; border-radius: 8px; }
@@ -200,7 +203,7 @@ footer p { margin: 0; }
   <div class="wrap bar">
     <a class="brand" href="#top" aria-label="Sola66 Apologetics">
       <img src="assets/icon-512.png" alt="" width="34" height="34">
-      <span class="wordmark" aria-hidden="true"><span class="top" id="wm-top">Sola66</span><span class="sub" id="wm-sub">APOLOGETICS</span></span>
+      <span class="wordmark" aria-hidden="true"><span class="top" id="wm-top">Sola<span class="sixty-six">66</span></span><span class="sub" id="wm-sub">APOLOGETICS</span></span>
     </a>
     <nav aria-label="Main">
       <a href="#how">How it works</a>
@@ -224,7 +227,7 @@ footer p { margin: 0; }
           </a>
           <a class="btn btn-ghost" href="#download" id="hero-other">All downloads</a>
         </div>
-        <p class="fine" id="hero-note">Version 1.0.2 · Windows, Mac and Android. iPhone coming soon.</p>
+        <p class="fine" id="hero-note">Version 1.0.3 · Windows, Mac and Android. iPhone coming soon.</p>
       </div>
       <div class="shots" aria-hidden="true">
         <img class="shot-mac" src="assets/screen-mac.jpg" alt="" width="1240" height="808">
@@ -250,7 +253,7 @@ footer p { margin: 0; }
         <article class="card" data-platform="mac">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 19h20"/></svg></div>
           <h3>Mac</h3>
-          <p class="meta">Apple silicon (M1 or newer), macOS 14 or newer<br>Disk image · 24 MB</p>
+          <p class="meta">Apple silicon (M1 or newer), macOS 14 or newer<br>Disk image · 25 MB</p>
           <a class="btn btn-primary" href="https://github.com/FaithFirstDev/sola66-apologetics/releases/latest/download/Sola66-Apologetics-Mac.dmg">Download for Mac</a>
           <a class="help" href="#install-mac">How to install</a>
         </article>
@@ -370,7 +373,7 @@ footer p { margin: 0; }
 <footer>
   <div class="wrap">
     <p>© 2026 Sola66 Apologetics · <a class="report-link" href="https://tally.so/r/kbdoyJ?version=website">Report a problem</a></p>
-    <p>Version 1.0.2 · Fonts: Inter and Noto Serif (SIL Open Font License)</p>
+    <p>Version 1.0.3 · Fonts: Inter and Noto Serif (SIL Open Font License)</p>
   </div>
 </footer>
 
@@ -426,7 +429,7 @@ footer p { margin: 0; }
   heroBtn.setAttribute('href', link.getAttribute('href'));
   heroLabel.textContent = link.textContent;
   var meta = card.querySelector('.meta');
-  note.innerHTML = 'Version 1.0.2 · ' + meta.innerHTML.replace('<br>', ' · ') + ' · <a href="#install-' + platform + '">How to install</a>';
+  note.innerHTML = 'Version 1.0.3 · ' + meta.innerHTML.replace('<br>', ' · ') + ' · <a href="#install-' + platform + '">How to install</a>';
 })();
 </script>
 </body>
