@@ -111,14 +111,16 @@ nav .cta:hover { color: var(--on-rose); background: var(--rose); }
 .legend { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 20px 0 0; color: var(--muted); font-size: 15px; align-items: center; }
 
 /* Layout: contents beside the guide on wide screens */
-.layout { display: grid; gap: 32px; padding: 32px 0 72px; }
+.layout { display: grid; gap: 32px; padding-top: 32px; padding-bottom: 72px; }
 @media (min-width: 1000px) { .layout { grid-template-columns: 230px minmax(0, 1fr); gap: 48px; } }
 .toc { font-size: 15px; }
 .toc h2 { font: 600 13px/1 "Inter", sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); margin-bottom: 12px; }
 .toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
 .toc a { display: block; text-decoration: none; color: var(--muted); padding: 6px 10px; border-radius: 8px; font-weight: 500; }
 .toc a:hover { background: var(--surface-2); color: var(--text); }
-@media (min-width: 1000px) { .toc nav { position: sticky; top: 88px; display: block; } }
+/* Not the header's row of links: the heading sits above the list. */
+.toc nav { display: block; }
+@media (min-width: 1000px) { .toc nav { position: sticky; top: 88px; } }
 @media (max-width: 999px) {
   .toc { background: var(--surface); border: 1px solid var(--divider); border-radius: 14px; padding: 16px; }
   .toc ol { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
@@ -278,12 +280,12 @@ footer p { margin: 0; }
         <figure class="fig">
           <div class="shot">
             <img src="assets/guide/home.jpg" width="1600" height="645" loading="lazy" alt="The Home screen on a computer, with the search box, the buttons to add a religion and import a shared file, and the Islam and Christianity cards.">
-            <span class="pin" style="left:66.1%;top:83.8%" aria-hidden="true">1</span>
+            <span class="pin" style="left:68.5%;top:83.8%" aria-hidden="true">1</span>
             <span class="pin" style="left:11.5%;top:37.6%" aria-hidden="true">2</span>
             <span class="pin" style="left:87.3%;top:17%" aria-hidden="true">3</span>
             <span class="pin" style="left:95%;top:17%" aria-hidden="true">4</span>
             <span class="pin" style="left:11.5%;top:50.6%" aria-hidden="true">5</span>
-            <span class="pin" style="left:56.5%;top:50.6%" aria-hidden="true">6</span>
+            <span class="pin" style="left:58%;top:50.6%" aria-hidden="true">6</span>
           </div>
           <figcaption>Home on a computer. Phones show the same cards and search, without the buttons in the middle row.</figcaption>
         </figure>
