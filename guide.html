@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to use Sola66 Apologetics</title>
+<meta name="description" content="An illustrated guide to Sola66 Apologetics: finding your way, reading and writing arguments, pairing your phone, sharing with friends and keeping backups.">
+<meta name="theme-color" content="#0A1020" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F3F5FA" media="(prefers-color-scheme: light)">
+<meta property="og:title" content="How to use Sola66 Apologetics">
+<meta property="og:description" content="An illustrated guide to every main feature, on your computer and your phone.">
+<meta property="og:image" content="assets/icon-512.png">
+<link rel="icon" type="image/png" href="assets/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+@font-face { font-family: "Inter"; font-weight: 400; font-style: normal; font-display: swap; src: url("assets/fonts/Inter-Regular.woff") format("woff"); }
+@font-face { font-family: "Inter"; font-weight: 500; font-style: normal; font-display: swap; src: url("assets/fonts/Inter-Medium.woff") format("woff"); }
+@font-face { font-family: "Inter"; font-weight: 600; font-style: normal; font-display: swap; src: url("assets/fonts/Inter-SemiBold.woff") format("woff"); }
+@font-face { font-family: "Noto Serif"; font-weight: 700; font-style: normal; font-display: swap; src: url("assets/fonts/NotoSerif-Bold.woff") format("woff"); }
+
+:root {
+  --bg: #F3F5FA;
+  --surface: #FFFFFF;
+  --surface-2: #F7F9FD;
+  --divider: #E2E7F0;
+  --text: #111827;
+  --muted: #4E5A72;
+  --faint: #5F6B82;
+  --rose: #D12F5A;
+  --brand-red: #D0101F;
+  --rose-fill: #D12F5A;
+  --rose-tint: #FFE1E9;
+  --on-rose: #FFFFFF;
+  --blue: #1D5FD0;
+  --blue-tint: #E3EDFF;
+  --green: #15803D;
+  --green-tint: #DDF5E5;
+  --amber: #A15C07;
+  --amber-tint: #FFF1D6;
+  --shadow: 0 1px 2px rgba(17, 24, 39, .06), 0 8px 24px rgba(17, 24, 39, .08);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0A1020;
+    --surface: #101A2E;
+    --surface-2: #15223B;
+    --divider: #1F2C47;
+    --text: #E9EDF5;
+    --muted: #A3AEC6;
+    --faint: #8591AD;
+    --rose: #F2577E;
+    --brand-red: #F03340;
+    --rose-fill: #C7365F;
+    --rose-tint: #3B1627;
+    --on-rose: #FFFFFF;
+    --blue: #7FB4FF;
+    --blue-tint: #15274A;
+    --green: #4ADE80;
+    --green-tint: #11301F;
+    --amber: #F5B95A;
+    --amber-tint: #33240C;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 12px 32px rgba(0, 0, 0, .35);
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 80px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 16px/1.65 "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--rose); text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3 { font-family: "Noto Serif", Georgia, serif; font-weight: 700; line-height: 1.2; margin: 0; letter-spacing: -0.01em; }
+.wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+@media (min-width: 720px) { .wrap { padding: 0 28px; } }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 16px; top: 12px; z-index: 10; background: var(--surface); padding: 8px 12px; }
+
+/* Header (same as the download page) */
+header {
+  position: sticky; top: 0; z-index: 5;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: saturate(160%) blur(12px);
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+  border-bottom: 1px solid var(--divider);
+}
+.bar { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+.brand img { width: 34px; height: 34px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, .35); }
+.wordmark { display: inline-flex; flex-direction: column; line-height: 1; }
+.wordmark .top { font: 700 20px/1 "Noto Serif", Georgia, serif; }
+.wordmark .top .sixty-six { color: var(--brand-red); }
+.wordmark .sub { font: 600 8.4px/1 "Inter", sans-serif; color: var(--muted); margin-top: 4px; white-space: nowrap; letter-spacing: 1.3px; }
+nav { display: flex; align-items: center; gap: 6px; }
+nav a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: 15px; padding: 8px 10px; border-radius: 8px; }
+nav a:hover { color: var(--text); background: var(--surface-2); }
+nav .cta { color: var(--on-rose); background: var(--rose-fill); padding: 8px 14px; }
+nav .cta:hover { color: var(--on-rose); background: var(--rose); }
+
+/* Intro */
+.intro { padding: 48px 0 8px; }
+.intro h1 { font-size: clamp(32px, 5vw, 48px); }
+.lede { color: var(--muted); font-size: clamp(17px, 2vw, 19px); margin: 14px 0 0; max-width: 40em; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 20px 0 0; color: var(--muted); font-size: 15px; align-items: center; }
+
+/* Layout: contents beside the guide on wide screens */
+.layout { display: grid; gap: 32px; padding: 32px 0 72px; }
+@media (min-width: 1000px) { .layout { grid-template-columns: 230px minmax(0, 1fr); gap: 48px; } }
+.toc { font-size: 15px; }
+.toc h2 { font: 600 13px/1 "Inter", sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); margin-bottom: 12px; }
+.toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.toc a { display: block; text-decoration: none; color: var(--muted); padding: 6px 10px; border-radius: 8px; font-weight: 500; }
+.toc a:hover { background: var(--surface-2); color: var(--text); }
+@media (min-width: 1000px) { .toc nav { position: sticky; top: 88px; display: block; } }
+@media (max-width: 999px) {
+  .toc { background: var(--surface); border: 1px solid var(--divider); border-radius: 14px; padding: 16px; }
+  .toc ol { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+}
+
+/* Chapters */
+.chapter { padding-bottom: 56px; margin-bottom: 56px; border-bottom: 1px solid var(--divider); }
+.chapter:last-child { border-bottom: 0; margin-bottom: 0; }
+.chapter > h2 { font-size: clamp(26px, 3.4vw, 34px); display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.chapter > p.sub { color: var(--muted); font-size: 17px; margin: 10px 0 0; max-width: 42em; }
+.chapter h3 { font-size: 21px; margin: 36px 0 10px; }
+.chapter p { max-width: 44em; }
+.for { font: 600 12.5px/1 "Inter", sans-serif; padding: 6px 10px; border-radius: 999px; letter-spacing: .02em; white-space: nowrap; }
+.for.both { background: var(--rose-tint); color: var(--rose); }
+.for.computer { background: var(--blue-tint); color: var(--blue); }
+.for.phone { background: var(--green-tint); color: var(--green); }
+
+/* Numbered steps */
+ol.steps { counter-reset: step; list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 12px; max-width: 46em; }
+ol.steps > li { counter-increment: step; position: relative; padding-left: 44px; }
+ol.steps > li::before {
+  content: counter(step); position: absolute; left: 0; top: -1px;
+  width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--rose-fill); color: var(--on-rose); font: 600 14px/1 "Inter", sans-serif;
+}
+ul.points { margin: 12px 0 0; padding-left: 20px; max-width: 46em; }
+ul.points li { margin: 6px 0; }
+ul.points li::marker { color: var(--rose); }
+
+/* Screenshots with numbered markers */
+.fig { margin: 22px 0 0; }
+.shot { position: relative; display: inline-block; max-width: 100%; vertical-align: top; }
+.shot img { display: block; max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--divider); box-shadow: var(--shadow); background: #fff; }
+.shot.phone img { border-radius: 22px; border: 6px solid #0B1220; }
+.pin {
+  position: absolute; transform: translate(-50%, -50%);
+  width: 26px; height: 26px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--rose-fill); color: #fff; font: 700 13.5px/1 "Inter", sans-serif;
+  box-shadow: 0 0 0 3px #fff, 0 3px 10px rgba(0, 0, 0, .35);
+  pointer-events: none;
+}
+@media (max-width: 600px) { .pin { width: 20px; height: 20px; font-size: 11px; box-shadow: 0 0 0 2px #fff, 0 2px 6px rgba(0, 0, 0, .35); } }
+figcaption { color: var(--faint); font-size: 14.5px; margin-top: 10px; max-width: 46em; }
+.keys { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; max-width: 46em; }
+.keys li { display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: start; }
+.keys .k { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: var(--rose-fill); color: #fff; font: 700 12.5px/1 "Inter", sans-serif; margin-top: 1px; }
+.pair { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; margin-top: 22px; }
+.pair > div { flex: 1 1 260px; max-width: 360px; }
+.pair.wide > div { max-width: 520px; }
+.phones { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 22px; }
+.phones .shot { width: 230px; }
+@media (max-width: 520px) { .phones .shot { width: calc(50% - 9px); } }
+.shot.small { max-width: 560px; }
+.shot.medium { max-width: 760px; }
+
+/* Notes */
+.tip, .note {
+  border-radius: 14px; padding: 14px 16px; margin: 20px 0 0; max-width: 46em;
+  display: grid; grid-template-columns: 24px 1fr; gap: 10px; font-size: 15.5px;
+}
+.tip { background: var(--green-tint); }
+.note { background: var(--amber-tint); }
+.tip svg, .note svg { width: 22px; height: 22px; margin-top: 1px; }
+.tip svg { color: var(--green); }
+.note svg { color: var(--amber); }
+.tip p, .note p { margin: 0; }
+.ui { font: 600 0.92em "Inter", sans-serif; background: var(--surface); border: 1px solid var(--divider); border-radius: 6px; padding: 1px 6px; white-space: nowrap; }
+kbd { font: 600 0.88em "Inter", sans-serif; background: var(--surface-2); border: 1px solid var(--divider); border-bottom-width: 2px; border-radius: 6px; padding: 0 6px; white-space: nowrap; }
+
+/* Quick answers */
+details { background: var(--surface); border: 1px solid var(--divider); border-radius: 14px; margin-top: 10px; max-width: 46em; }
+summary { cursor: pointer; list-style: none; padding: 15px 18px; font-weight: 600; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: ""; width: 9px; height: 9px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); margin-top: -4px; flex: none; }
+details[open] summary::after { transform: rotate(-135deg); margin-top: 4px; }
+details > div { padding: 0 18px 16px; color: var(--muted); }
+details > div p { margin: 0 0 8px; }
+
+footer { border-top: 1px solid var(--divider); padding: 32px 0 48px; color: var(--faint); font-size: 14px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+footer p { margin: 0; }
+</style>
+</head>
+<body>
+<a class="skip" href="#start">Skip to the guide</a>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="./" aria-label="Sola66 Apologetics, download page">
+      <img src="assets/icon-512.png" alt="" width="34" height="34">
+      <span class="wordmark" aria-hidden="true"><span class="top">Sola<span class="sixty-six">66</span></span><span class="sub" id="wm-sub">APOLOGETICS</span></span>
+    </a>
+    <nav aria-label="Main">
+      <a class="cta" href="./#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main id="start">
+  <div class="intro">
+    <div class="wrap">
+      <h1>How to use Sola66 Apologetics</h1>
+      <p class="lede">A short illustrated guide to everything the app does. Read it from the top, or jump to the part you need. The red numbers on each picture match the steps beside it.</p>
+      <p class="legend">Each part says where it applies:
+        <span class="for computer">Computer</span> Mac and Windows
+        <span class="for phone">Phone</span> Android and iPhone
+        <span class="for both">Both</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="wrap layout">
+    <aside class="toc" aria-label="Contents">
+      <nav>
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#how">1. How Sola66 works</a></li>
+          <li><a href="#find">2. Finding your way</a></li>
+          <li><a href="#read">3. Reading an argument</a></li>
+          <li><a href="#write">4. Writing on your computer</a></li>
+          <li><a href="#phone">5. Your phone</a></li>
+          <li><a href="#share">6. Sharing with friends</a></li>
+          <li><a href="#backup">7. Backups and safety copies</a></li>
+          <li><a href="#settings">8. Settings and help</a></li>
+          <li><a href="#answers">9. Quick answers</a></li>
+        </ol>
+      </nav>
+    </aside>
+
+    <div>
+      <!-- 1 -->
+      <section class="chapter" id="how">
+        <h2>1. How Sola66 works <span class="for both">Both</span></h2>
+        <p class="sub">Sola66 is a study library of arguments, organized like this:</p>
+        <ul class="points">
+          <li><b>Religions &amp; worldviews</b> (for example Islam or Christianity) contain…</li>
+          <li><b>Topics</b> (for example “Resurrection of Jesus”), which contain…</li>
+          <li><b>Arguments</b>, each with a summary, the argument itself, counterarguments, sources, tags and other names it’s known by.</li>
+        </ul>
+        <ol class="steps">
+          <li><b>You write on your computer.</b> The Mac and Windows apps are where you add and edit everything.</li>
+          <li><b>Your phone receives the library.</b> Pair your phone with your computer once; after that, the phone fetches the latest library over your own Wi-Fi whenever you ask it to. Phones read, search and copy, but don’t edit.</li>
+          <li><b>Everything stays yours.</b> There’s no account and no cloud. Your library lives on your own devices, and your personal notes and favorites never leave the device they’re on.</li>
+        </ol>
+        <div class="tip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <p>A new install starts with two empty religions, Islam and Christianity, ready for your topics. You can rename or delete them, and add up to eight in total.</p>
+        </div>
+      </section>
+
+      <!-- 2 -->
+      <section class="chapter" id="find">
+        <h2>2. Finding your way <span class="for both">Both</span></h2>
+        <p class="sub">Home shows your religions and worldviews. Tap or click one to see its topics, then a topic to see its arguments.</p>
+
+        <figure class="fig">
+          <div class="shot">
+            <img src="assets/guide/home.jpg" width="1600" height="645" loading="lazy" alt="The Home screen on a computer, with the search box, the buttons to add a religion and import a shared file, and the Islam and Christianity cards.">
+            <span class="pin" style="left:66.1%;top:83.8%" aria-hidden="true">1</span>
+            <span class="pin" style="left:11.5%;top:37.6%" aria-hidden="true">2</span>
+            <span class="pin" style="left:87.3%;top:17%" aria-hidden="true">3</span>
+            <span class="pin" style="left:95%;top:17%" aria-hidden="true">4</span>
+            <span class="pin" style="left:11.5%;top:50.6%" aria-hidden="true">5</span>
+            <span class="pin" style="left:56.5%;top:50.6%" aria-hidden="true">6</span>
+          </div>
+          <figcaption>Home on a computer. Phones show the same cards and search, without the buttons in the middle row.</figcaption>
+        </figure>
+        <ul class="keys">
+          <li><span class="k">1</span><span><b>A religion or worldview.</b> Open it to see its topics.</span></li>
+          <li><span class="k">2</span><span><b>Search</b> looks through the whole library (see below).</span></li>
+          <li><span class="k">3</span><span><b>Sync</b> pairs your phone and sends it the library (<a href="#phone">part 5</a>).</span></li>
+          <li><span class="k">4</span><span><b>Settings</b>: theme, text size, backups, help and more.</span></li>
+          <li><span class="k">5</span><span><span class="for computer">Computer</span> <b>Add religion/worldview</b> (<a href="#write">part 4</a>).</span></li>
+          <li><span class="k">6</span><span><span class="for computer">Computer</span> <b>Import shared file</b> from a friend (<a href="#share">part 6</a>).</span></li>
+        </ul>
+        <p>The <b>Sola66</b> name at the top left always takes you back to Home, and the arrow beside it goes back one step. The small links above each page title (for example <b>Home › Christianity</b>) take you straight back to any level.</p>
+
+        <h3>Topics and arguments</h3>
+        <figure class="fig">
+          <div class="shot">
+            <img src="assets/guide/topics.jpg" width="1600" height="839" loading="lazy" alt="The topics of Christianity, each with a star and a menu button, and the Favorites first, Add topic and Reorder buttons above them.">
+            <span class="pin" style="left:12.5%;top:54.5%" aria-hidden="true">1</span>
+            <span class="pin" style="left:77.3%;top:58.4%" aria-hidden="true">2</span>
+            <span class="pin" style="left:12.3%;top:44.2%" aria-hidden="true">3</span>
+            <span class="pin" style="left:88.5%;top:58.4%" aria-hidden="true">4</span>
+          </div>
+        </figure>
+        <ul class="keys">
+          <li><span class="k">1</span><span><b>A topic.</b> Open it to see its arguments. The arguments list looks the same, with the argument’s summary under each title.</span></li>
+          <li><span class="k">2</span><span><b>The star</b> adds a topic or argument to your favorites. Favorites are kept on each device separately.</span></li>
+          <li><span class="k">3</span><span><b>Favorites first</b> lists your starred items at the top. It turns gold when it’s on.</span></li>
+          <li><span class="k">4</span><span><span class="for computer">Computer</span> <b>The ⋮ menu</b> renames, moves, shares or deletes. You can also right-click any item.</span></li>
+        </ul>
+
+        <h3>Searching</h3>
+        <figure class="fig">
+          <div class="shot">
+            <img src="assets/guide/search.jpg" width="1600" height="335" loading="lazy" alt="Searching for “empty tomb” finds the argument The Empty Tomb, with the matching words highlighted.">
+          </div>
+        </figure>
+        <ul class="points">
+          <li>Search covers topic names and descriptions, and everything in an argument: title, summary, text, tags, other names, counterarguments and sources. It also finds your own personal notes.</li>
+          <li>Capital letters don’t matter, but accents do: “Kalam” won’t find “Kalām”.</li>
+          <li>Results with your exact words in order come first. Tap a result to open it.</li>
+          <li>On a computer, press <kbd>⌘F</kbd> (Mac) or <kbd>Ctrl+F</kbd> (Windows) to start searching from Home or any list.</li>
+        </ul>
+      </section>
+
+      <!-- 3 -->
+      <section class="chapter" id="read">
+        <h2>3. Reading an argument <span class="for both">Both</span></h2>
+        <p class="sub">An argument opens with its summary and the argument itself, then the counterarguments and sources.</p>
+
+        <figure class="fig">
+          <div class="shot">
+            <img src="assets/guide/reader.jpg" width="1600" height="1043" loading="lazy" alt="An argument, The Empty Tomb, with the buttons Copy argument, PDF, 100%, a star, Edit and a menu, then the summary and the argument text.">
+            <span class="pin" style="left:25.3%;top:29%" aria-hidden="true">1</span>
+            <span class="pin" style="left:36.2%;top:29%" aria-hidden="true">2</span>
+            <span class="pin" style="left:44.4%;top:29%" aria-hidden="true">3</span>
+            <span class="pin" style="left:51%;top:29%" aria-hidden="true">4</span>
+            <span class="pin" style="left:56.9%;top:29%" aria-hidden="true">5</span>
+            <span class="pin" style="left:63.1%;top:29%" aria-hidden="true">6</span>
+          </div>
+        </figure>
+        <ul class="keys">
+          <li><span class="k">1</span><span><b>Copy argument</b> copies the whole argument as plain text, ready to paste into a message or document: title, summary, argument, counterarguments and sources. Your personal note isn’t included.</span></li>
+          <li><span class="k">2</span><span><b>PDF</b> shows a print-ready page you can print, share or save.</span></li>
+          <li><span class="k">3</span><span><b>Text size</b> makes argument text larger, from 100% to 200%, on this device only.</span></li>
+          <li><span class="k">4</span><span><b>The star</b> adds the argument to your favorites.</span></li>
+          <li><span class="k">5</span><span><span class="for computer">Computer</span> <b>Edit</b> opens the argument for editing.</span></li>
+          <li><span class="k">6</span><span><span class="for computer">Computer</span> <b>⋯</b> moves the argument to another topic, shares or deletes it.</span></li>
+        </ul>
+
+        <h3>Counterarguments and sources</h3>
+        <div class="pair wide">
+          <div>
+            <div class="shot">
+              <img src="assets/guide/counterarguments.jpg" width="1600" height="1273" loading="lazy" alt="Two numbered counterarguments, each with a Claim, a Response and Sources, followed by Citations / Sources.">
+            </div>
+          </div>
+          <div>
+            <p style="margin-top:0">Each counterargument is a numbered exchange:</p>
+            <ul class="points">
+              <li><b style="color:var(--amber)">Claim</b>: the objection someone might raise.</li>
+              <li><b style="color:var(--green)">Response</b>: how to answer it.</li>
+              <li><b>Sources</b>: where the answer comes from (optional).</li>
+            </ul>
+            <p>Below them, <b>Citations / Sources</b> lists the references for the whole argument, with quotations and web links. Links open in your browser only when you tap them.</p>
+            <p>Tap a section’s heading to fold it away; the app remembers your choice.</p>
+          </div>
+        </div>
+
+        <h3>Your personal note, tags and other names</h3>
+        <div class="pair wide">
+          <div>
+            <div class="shot">
+              <img src="assets/guide/reader-end.jpg" width="1600" height="1273" loading="lazy" alt="The end of an argument: a second Copy argument button, the Personal note box marked Only on this device, then Also known as and Tags.">
+              <span class="pin" style="left:3.9%;top:64.9%" aria-hidden="true">1</span>
+              <span class="pin" style="left:3.9%;top:91.1%" aria-hidden="true">2</span>
+            </div>
+          </div>
+          <div>
+            <ul class="keys" style="margin-top:0">
+              <li><span class="k">1</span><span><b>Personal note.</b> Choose <span class="ui">Add note</span> to write your own thoughts on the argument. Notes stay <b>only on this device</b>: they’re never copied, put in PDFs, shared or sent to your phone.</span></li>
+              <li><span class="k">2</span><span><b>Also known as</b> lists other names for the argument, and <b>Tags</b> group related arguments. Both are searchable.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>On your phone</h3>
+        <div class="phones">
+          <div class="shot phone">
+            <img src="assets/guide/phone-reader.jpg" width="720" height="1557" loading="lazy" alt="The same argument on an Android phone.">
+          </div>
+          <div class="shot phone">
+            <img src="assets/guide/phone-note.jpg" width="720" height="1557" loading="lazy" alt="Writing a personal note on the phone, with the formatting tools above the keyboard.">
+          </div>
+        </div>
+        <p>Phones show the same argument, with <span class="ui">Copy argument</span>, <span class="ui">PDF</span>, text size and the star. You can write personal notes on your phone too; they stay on the phone.</p>
+      </section>
+
+      <!-- 4 -->
+      <section class="chapter" id="write">
+        <h2>4. Writing on your computer <span class="for computer">Computer</span></h2>
+        <p class="sub">All writing happens in the Mac or Windows app. Your phones get the changes the next time they update.</p>
+
+        <h3>Adding religions, topics and arguments</h3>
+        <ol class="steps">
+          <li><b>A religion or worldview:</b> on Home, click <span class="ui">Add religion/worldview</span>, type its name and click <span class="ui">Add</span>. You can have up to eight.</li>
+          <li><b>A topic:</b> open a religion, click <span class="ui">Add topic</span>, give it a name and, if you like, a short description.</li>
+          <li><b>An argument:</b> open a topic and click <span class="ui">Add argument</span>. The editor opens (below).</li>
+        </ol>
+        <figure class="fig">
+          <div class="shot small">
+            <img src="assets/guide/add-worldview.jpg" width="1240" height="700" loading="lazy" alt="The Add religion/worldview dialog, with formatting tools, a Name field and the Cancel and Add buttons.">
+          </div>
+        </figure>
+
+        <h3>The argument editor</h3>
+        <figure class="fig">
+          <div class="shot">
+            <img src="assets/guide/editor.jpg" width="1600" height="1043" loading="lazy" alt="Editing The Empty Tomb: formatting tools, then the Title, Summary, Argument and Tags fields, with Save at the top right.">
+            <span class="pin" style="left:2.3%;top:7.9%" aria-hidden="true">1</span>
+            <span class="pin" style="left:12.3%;top:10.9%" aria-hidden="true">2</span>
+            <span class="pin" style="left:12.3%;top:18.8%" aria-hidden="true">3</span>
+            <span class="pin" style="left:12.3%;top:31.7%" aria-hidden="true">4</span>
+            <span class="pin" style="left:12.3%;top:49.5%" aria-hidden="true">5</span>
+            <span class="pin" style="left:12.3%;top:80.4%" aria-hidden="true">6</span>
+            <span class="pin" style="left:89.1%;top:3.5%" aria-hidden="true">7</span>
+          </div>
+        </figure>
+        <ul class="keys">
+          <li><span class="k">1</span><span><b>Close</b> the editor. If you have unsaved changes, it asks whether to save or discard them.</span></li>
+          <li><span class="k">2</span><span><b>Formatting</b> for the field you’re typing in: bold, italic, underline, size, font and color, plus undo and redo. <kbd>⌘B</kbd>/<kbd>Ctrl+B</kbd>, <kbd>I</kbd> and <kbd>U</kbd> work too.</span></li>
+          <li><span class="k">3</span><span><b>Title</b> (required).</span></li>
+          <li><span class="k">4</span><span><b>Summary</b>: one or two sentences shown at the top of the argument and in lists (optional).</span></li>
+          <li><span class="k">5</span><span><b>Argument</b>: the full text (required). Greek, Hebrew and Arabic display correctly; a paragraph that starts in Hebrew or Arabic runs right to left.</span></li>
+          <li><span class="k">6</span><span><b>Tags</b> and <b>Also known as</b>: type one and press <kbd>Enter</kbd>. Click a tag to change it, or its × to remove it.</span></li>
+          <li><span class="k">7</span><span><b>Save</b>. If something is missing, a message at the top says what to fix.</span></li>
+        </ul>
+
+        <figure class="fig">
+          <div class="shot">
+            <img src="assets/guide/editor-cards.jpg" width="1600" height="1043" loading="lazy" alt="Further down the editor: Also known as, then Counterarguments with an Add counterargument button and the first counterargument’s Claim, Response and Sources fields.">
+            <span class="pin" style="left:63.7%;top:47.8%" aria-hidden="true">1</span>
+            <span class="pin" style="left:84.7%;top:56.3%" aria-hidden="true">2</span>
+          </div>
+        </figure>
+        <ul class="keys">
+          <li><span class="k">1</span><span><b>Add counterargument</b> adds a Claim, Response and Sources box. Further down, <span class="ui">Add citation</span> adds a source, an optional quotation and an optional web link.</span></li>
+          <li><span class="k">2</span><span><b>Move up, move down and remove.</b> If you remove one by mistake, click <span class="ui">Undo</span> in the message that appears.</span></li>
+        </ul>
+        <div class="tip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <p>Unsaved work is kept as a draft. If the app closes before you save, it offers to restore your changes the next time you open the argument, or shows the draft at the top of the topic.</p>
+        </div>
+
+        <h3>Renaming, moving, reordering and deleting</h3>
+        <div class="pair wide">
+          <div>
+            <div class="shot">
+              <img src="assets/guide/argument-menu.jpg" width="1600" height="1095" loading="lazy" alt="An argument’s menu with Edit, Move to another topic…, Move down, Share… and Delete….">
+            </div>
+          </div>
+          <div>
+            <ul class="points" style="margin-top:0">
+              <li>Click an item’s <b>⋯</b> or <b>⋮</b> button, or right-click it, for its menu.</li>
+              <li><b>Move to another topic…</b> moves an argument anywhere in your library.</li>
+              <li><b>Reorder</b> (above each list) lets you arrange everything at once, by dragging or with the arrows.</li>
+              <li><b>Delete…</b> always asks first and says exactly what will be removed.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5 -->
+      <section class="chapter" id="phone">
+        <h2>5. Your phone <span class="for both">Both</span></h2>
+        <p class="sub">Pair your phone with your computer once. After that, your phone fetches the latest library whenever you tap <b>Check for update</b>. Both must be on the same Wi-Fi, and nothing goes through the internet.</p>
+
+        <h3>Pairing (once)</h3>
+        <ol class="steps">
+          <li><span class="for computer">Computer</span> Click <span class="ui">Sync</span> at the top, then <span class="ui">Pair a phone</span>. A code appears. Keep this screen open.</li>
+          <li><span class="for phone">Phone</span> Tap the Sync button at the top (the two arrows), then <span class="ui">Scan the computer’s code</span> and point the camera at the code. If you can’t scan, tap <span class="ui">Enter the code manually</span> and type the address and code shown under it.</li>
+          <li><b>Compare the numbers.</b> Both screens now show the same six-digit number.</li>
+          <li><b>Confirm on both</b>, in either order: <span class="ui">Codes match</span> on the phone and <span class="ui">Confirm pairing</span> on the computer. If the numbers are different, choose <span class="ui">Codes don’t match</span> instead.</li>
+        </ol>
+        <div class="pair wide">
+          <div>
+            <div class="shot">
+              <img src="assets/guide/sync.jpg" width="1600" height="1277" loading="lazy" alt="The computer’s Sync screen: Ready for phones on this network, the Send updates switch, and the Pair a phone button.">
+              <span class="pin" style="left:72.8%;top:52.3%" aria-hidden="true">1</span>
+            </div>
+          </div>
+          <div>
+            <div class="shot">
+              <img src="assets/guide/pair-code.jpg" width="1080" height="1220" loading="lazy" alt="The Pair a phone dialog with a QR code, and below it an address and a code to type in if the camera can’t scan.">
+            </div>
+          </div>
+        </div>
+        <div class="phones">
+          <div class="shot phone">
+            <img src="assets/guide/phone-library-updates.jpg" width="720" height="1557" loading="lazy" alt="The phone’s Library updates screen with Scan the computer’s code and Enter the code manually.">
+            <span class="pin" style="left:8.5%;top:52%" aria-hidden="true">2</span>
+          </div>
+          <div class="shot phone">
+            <img src="assets/guide/phone-compare.jpg" width="720" height="1557" loading="lazy" alt="The phone showing Compare the codes, with the number 712 672 and the buttons Codes don’t match and Codes match.">
+            <span class="pin" style="left:24%;top:52.7%" aria-hidden="true">3</span>
+            <span class="pin" style="left:91%;top:62.3%" aria-hidden="true">4</span>
+          </div>
+        </div>
+        <figure class="fig">
+          <div class="shot small">
+            <img src="assets/guide/pair-confirm.jpg" width="1080" height="620" loading="lazy" alt="The computer asking to confirm pairing with My phone, showing the same number 712 672.">
+            <span class="pin" style="left:31.5%;top:57.1%" aria-hidden="true">3</span>
+            <span class="pin" style="left:88.8%;top:72%" aria-hidden="true">4</span>
+          </div>
+          <figcaption>The computer shows the same number. Matching numbers prove the phone is talking to your computer and nobody else.</figcaption>
+        </figure>
+        <div class="note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+          <p>The code works once and expires after five minutes; if it runs out, click <span class="ui">Pair a phone</span> again. On Windows, if a firewall message appears, allow the app on <b>private networks</b>. On iPhone, allow the camera and <b>Local Network</b> access when asked.</p>
+        </div>
+
+        <h3>Getting the latest library</h3>
+        <ol class="steps">
+          <li><span class="for computer">Computer</span> Open <span class="ui">Sync</span> and leave it open. Updates only travel while this screen is open.</li>
+          <li><span class="for phone">Phone</span> Open Sync and tap <span class="ui">Check for update</span>.</li>
+          <li>The phone shows what will change: how many topics and arguments are added, changed or removed. Your notes and favorites are kept; if an argument you wrote a note on was removed, it tells you before anything happens.</li>
+          <li>Tap <span class="ui">Apply update</span>. A safety copy of the phone’s library is saved first.</li>
+        </ol>
+        <div class="phones">
+          <div class="shot phone">
+            <img src="assets/guide/phone-preview.jpg" width="720" height="1557" loading="lazy" alt="The phone’s Library update preview: Verified update from My Mac, Topics added 5, Arguments added 4, Your personal data kept, and Apply update.">
+          </div>
+          <div class="shot phone">
+            <img src="assets/guide/phone-home.jpg" width="720" height="1557" loading="lazy" alt="The phone’s Home screen after the update, showing Islam and Christianity.">
+          </div>
+        </div>
+        <div class="tip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <p><b>No shared Wi-Fi?</b> On the computer’s Sync screen, open the paired phone’s ⋯ menu and choose <span class="ui">Save update file for this phone…</span>. Send that file to the phone, then on the phone tap <span class="ui">Open an update file…</span>. Only that phone can open it.</p>
+        </div>
+        <p>One computer can send to up to eight phones. Got a new computer? <b>Hand over to another computer</b> (in Settings) walks you through moving your library across; your phones then pair with the new one.</p>
+      </section>
+
+      <!-- 6 -->
+      <section class="chapter" id="share">
+        <h2>6. Sharing with friends <span class="for computer">Computer</span></h2>
+        <p class="sub">Send someone a whole religion, a topic or single arguments as a file. They import it into their own library on their computer. Your personal notes and favorites are never included.</p>
+
+        <h3>Sending</h3>
+        <ol class="steps">
+          <li>Choose <span class="ui">Share…</span> in the menu of a religion, topic or argument, or <span class="ui">Share arguments</span> in Settings.</li>
+          <li>Tick what to share. You can add your name or ministry under <b>Shared by</b>.</li>
+          <li>Click <span class="ui">Create shared file…</span> and save it. Send the file to your friend by email, a messaging app or a USB stick.</li>
+        </ol>
+        <figure class="fig">
+          <div class="shot medium">
+            <img src="assets/guide/share.jpg" width="1600" height="1375" loading="lazy" alt="The Share arguments screen with Christianity and its three topics ticked, a Shared by field, and Create shared file….">
+          </div>
+        </figure>
+
+        <h3>Receiving</h3>
+        <ol class="steps">
+          <li>Save the file your friend sent, then click <span class="ui">Import shared file</span> on Home and choose it.</li>
+          <li>A preview shows exactly what will be added. Things go into your existing religions and topics when the names match.</li>
+          <li>Click <span class="ui">Import</span>.</li>
+        </ol>
+        <figure class="fig">
+          <div class="shot medium">
+            <img src="assets/guide/import.jpg" width="1600" height="1273" loading="lazy" alt="The import preview for a file called Islam shared by A friend: it adds one argument, and lists one argument with the same title as one you already have, unticked.">
+          </div>
+        </figure>
+        <ul class="points">
+          <li><b>Nothing of yours is replaced or deleted.</b> A safety copy is saved first, so you can undo the import from Settings › Local snapshots.</li>
+          <li><b>Same title as one you have:</b> if your friend’s argument has the same title as one already in that topic, it’s skipped unless you tick it. Tick it to keep both.</li>
+          <li><b>Importing a newer file</b> from the same friend updates what you got from them before, unless you’ve changed it yourself.</li>
+        </ul>
+      </section>
+
+      <!-- 7 -->
+      <section class="chapter" id="backup">
+        <h2>7. Backups and safety copies <span class="for both">Both</span></h2>
+        <p class="sub">Two kinds of protection: backups you make yourself, and safety copies the app makes automatically.</p>
+
+        <h3>Private backups</h3>
+        <ol class="steps">
+          <li>Go to Settings › <span class="ui">Create full private backup</span>.</li>
+          <li>Choose a password of at least 12 characters, and type it twice.</li>
+          <li>Click <span class="ui">Create encrypted backup</span> and save the file somewhere safe, such as a USB stick or another computer.</li>
+        </ol>
+        <figure class="fig">
+          <div class="shot small">
+            <img src="assets/guide/backup.jpg" width="1400" height="1080" loading="lazy" alt="The Full private backup screen with a warning that there is no password reset, two password fields and Create encrypted backup.">
+          </div>
+        </figure>
+        <div class="note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+          <p><b>Keep your password safe.</b> There is no way to reset it, and without it nobody can open the backup, including you.</p>
+        </div>
+        <p>A backup holds your whole library plus this device’s notes, favorites and settings. To use it, go to Settings › <span class="ui">Restore from backup</span>, choose the file and enter the password. The app shows what’s inside before anything changes.</p>
+        <p>On Android, backups and PDFs are saved in <b>Downloads › Sola66 Apologetics</b>. On iPhone, you choose where in the Files app.</p>
+
+        <h3>Local snapshots (automatic)</h3>
+        <figure class="fig">
+          <div class="shot small">
+            <img src="assets/guide/snapshots.jpg" width="1480" height="520" loading="lazy" alt="Local snapshots, showing one snapshot taken before importing Islam, with a Restore button.">
+          </div>
+        </figure>
+        <p>Before a restore, a library update or an import changes your library, the app quietly saves a snapshot. The latest three are kept in Settings › <span class="ui">Local snapshots</span>. If something went wrong, choose <span class="ui">Restore…</span> on the snapshot from just before it.</p>
+      </section>
+
+      <!-- 8 -->
+      <section class="chapter" id="settings">
+        <h2>8. Settings and help <span class="for both">Both</span></h2>
+        <div class="pair wide">
+          <div>
+            <div class="shot">
+              <img src="assets/guide/settings.jpg" width="1600" height="1043" loading="lazy" alt="Settings on a computer: Theme, Reader text size, and the Library &amp; devices group.">
+              <span class="pin" style="left:17.5%;top:24%" aria-hidden="true">1</span>
+              <span class="pin" style="left:17.5%;top:36.1%" aria-hidden="true">2</span>
+              <span class="pin" style="left:17.5%;top:57.7%" aria-hidden="true">3</span>
+            </div>
+          </div>
+          <div>
+            <div class="shot phone" style="width:230px">
+              <img src="assets/guide/phone-settings.jpg" width="720" height="1557" loading="lazy" alt="Settings on a phone.">
+            </div>
+          </div>
+        </div>
+        <ul class="keys">
+          <li><span class="k">1</span><span><b>Theme:</b> Light, Dark, or Follow system to match your device.</span></li>
+          <li><span class="k">2</span><span><b>Reader text size</b> for argument text on this device.</span></li>
+          <li><span class="k">3</span><span><b>Library &amp; devices:</b> Sync and pairing on computers, plus sharing and importing; <b>Library updates</b> on phones.</span></li>
+        </ul>
+        <p>Further down: <b>Backup &amp; recovery</b> (<a href="#backup">part 7</a>), then <b>Privacy</b>, <b>Help</b> (short reminders inside the app) and <b>Report a problem</b>. From the next version, <b>How to use the app</b> at the top of Settings opens this guide.</p>
+        <div class="tip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <p><b>Something not working?</b> Settings › <span class="ui">Report a problem</span> opens a short form in your browser, with the app version and your kind of device filled in. Describe what happened, and add your email if you’d like a reply.</p>
+        </div>
+      </section>
+
+      <!-- 9 -->
+      <section class="chapter" id="answers">
+        <h2>9. Quick answers</h2>
+        <details>
+          <summary>My phone can’t find my computer</summary>
+          <div>
+            <p>Check that both are on the same Wi-Fi and that the computer’s <b>Sync</b> screen is open with <b>Send updates</b> switched on.</p>
+            <p>On Windows, allow the app through the firewall on private networks, and set your Wi-Fi to Private. On iPhone, check Settings › Sola66 › Local Network.</p>
+            <p>Some guest or work networks block devices from seeing each other; use an update file instead (<a href="#phone">part 5</a>).</p>
+          </div>
+        </details>
+        <details>
+          <summary>Why can’t I edit on my phone?</summary>
+          <div><p>Phones read the library your computer sends them, so your computer is the one place where the library is written. That keeps every device in step. You can still add personal notes and favorites on your phone.</p></div>
+        </details>
+        <details>
+          <summary>Are my notes and favorites sent anywhere?</summary>
+          <div><p>No. They stay on the device where you made them. They’re included only in the password-protected backups you create yourself.</p></div>
+        </details>
+        <details>
+          <summary>Does the app need the internet?</summary>
+          <div><p>No. Everything works offline. Pairing and updates use your own Wi-Fi, never the internet. The only things that open in your browser are web links in sources, this guide and the Report a problem form, and only when you tap them.</p></div>
+        </details>
+        <details>
+          <summary>I forgot my backup password</summary>
+          <div><p>Unfortunately the backup can’t be opened without it; there’s no reset. Your library on your devices isn’t affected. Make a new backup with a password you’ll remember.</p></div>
+        </details>
+        <details>
+          <summary>I deleted something by mistake</summary>
+          <div><p>A removed counterargument or citation can be brought back with <b>Undo</b> straight away. If you restored, updated or imported something by mistake, use Settings › Local snapshots. Otherwise, restore your latest private backup.</p></div>
+        </details>
+        <details>
+          <summary>How do I get a newer version of the app?</summary>
+          <div><p>Download and install it from the <a href="./#download">download page</a> the same way as the first time. Your library, notes and favorites are kept.</p></div>
+        </details>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Sola66 Apologetics · <a href="./">Download page</a> · <a href="https://tally.so/r/kbdoyJ?version=guide">Report a problem</a></p>
+    <p>Pictures show the Mac and Android apps; Windows and iPhone look the same.</p>
+  </div>
+</footer>
+</body>
+</html>
